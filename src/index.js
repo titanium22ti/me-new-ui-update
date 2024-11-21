@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { WalletKitProvider } from '@mysten/wallet-kit';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import './responsive.css';
+// import './dash.scss';
+import "./toast-style-override.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <WalletKitProvider>
+      <App />
+    </WalletKitProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
